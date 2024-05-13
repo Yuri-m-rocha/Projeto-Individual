@@ -1,0 +1,59 @@
+body{
+    background-color: #ffa352 ;
+    margin: 0;
+    padding: 0;
+}
+
+.navBar{
+    background-color: #E67413;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.img1{
+    justify-content: start;
+    height: 100px;
+}
+
+.img2{
+    height: 100px;
+    justify-content: start;   
+}
+
+.links{
+    font-size: 20px;
+    margin-right: 25px;
+    display: flex;
+    list-style: none;      
+}
+
+.links li {
+    margin-left: 20px;
+}
+
+.home {
+    margin-top: 100px;
+    display: flex;
+    background-image: url(./assets/valeDoFimLogin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 650px;
+    width: 100%;
+}
+
+.PapelLogin {
+    height: 500px;
+    width: 750px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-image: url(./assets/pergaminho2.png);
+    margin-top: 140px;
+}
