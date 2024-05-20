@@ -1,33 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="login.css">
 </head>
-<body>
-    <div class="navBar">
-        <img src="./assets/naruto_render_by_eclairdesigns-d4jzfuj.png" class="img1">   
-        <img src="./assets/nomeNarutoo-removebg-preview (1).png" class="img2">
-    
-        <ul class="links">
-          
-          <li>HOME</li>
-          <li>GAME</li>
-          <li>PERSONAGENS</li>
-          <li>SAIBA MAIS</li>
-          <a href="cadastro.html"> <li>CADASTRAR</li> </a>
-        </ul>
-    </div>
 
-    <div class="home">
-        <div class="PapelLogin">
-            <li>EMAIL</li>
-            <li>SENHA </li>
+<body>
+
+    <main>
+
+        <!-- HEADER -->
+
+        <header>
+            <div>
+                <img src="./assets/naruto_render_by_eclairdesigns-d4jzfuj.png" class="img1">
+                <img src="./assets/nomeNarutoo-removebg-preview (1).png" class="img2">
+            </div>
+
+
+            <nav>
+                <ul class="links">
+
+                    <a href="home.html">
+                        <li>HOME</li>
+                    </a>
+                    <a href="#">
+                        <li>GAME</li>
+                    </a>
+                    <a href="#persona">
+                        <li>PERSONAGENS</li>
+                    </a>
+                    <a href="#">
+                        <li>SAIBA MAIS</li>
+                    </a>
+                    <a href="cadastro.html">
+                        <li>CADASTRAR</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!-- FORMULARIO DE LOGIN -->
+
+        <div class="home">
+
+            <div class="login">
+
+                <div class="EmailSenha">
+
+                    <p>Email</p>
+                    <input type="text" placeholder="naruto@gmail.com">
+
+                    <p>Senha</p>
+                    <input type="password" placeholder="**********">
+
+                </div>
+
+                <div class="div-btn">
+                    <button>ENTRAR</button>
+                </div>
+            </div>
 
         </div>
-    </div>
-    
+
+    </main>
+
+
 </body>
+
 </html>
