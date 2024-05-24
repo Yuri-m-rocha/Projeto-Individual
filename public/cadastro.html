@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+    <script src="../assets/js/sessao.js"></script>
+</head>
+
+<body>
+
+    <main>
+
+        <!-- HEADER -->
+
+        <header>
+            <div>
+                <a href="index.html"> <img src="./assets/img/naruto_render_by_eclairdesigns-d4jzfuj.png" class="img1"> </a>
+                <a href="index.html"><img src="./assets/img/nomeNarutoo-removebg-preview (1).png" class="img2"> </a>
+            </div>
+
+
+            <nav>
+                <ul class="links">
+
+                    <!-- <a href="index.html">
+                        <li>HOME</li>
+                    </a> -->
+                    <a href="saibaMais.html">
+                        <li>SAIBA MAIS</li>
+                    </a>
+                    <a href="index.html #persona">
+                        <li>PERSONAGENS</li>
+                    </a>
+                    <a href="index.html #game">
+                        <li>GAME</li>
+                    </a>
+                    <a href="login.html">
+                        <li>LOGAR</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!-- FORMULARIO DE LOGIN -->
+
+        <div class="home">
+
+            <div class="login">
+
+                <div class="EmailSenha">
+                    <p>NOME</p>
+                    <input type="text" placeholder="Naruto" id="nome_input">
+
+                    <p>EMAIL</p>
+                    <input type="text" placeholder="naruto@gmail.com" id="email_input">
+
+                    <p>SENHA</p>
+                    <input type="password" placeholder="**********" id="senha_input">
+
+                    <p>CONFIRMAÇÃO DA SENHA</p>
+                    <input type="password" placeholder="**********" id="confSenha_input">
+
+                </div>
+
+                <div class="div-btn">
+                    <button onclick="cadastrar()">CADASTRAR</button>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confSenha_input.value;
+
+        if (
+            nomeVar == "" ||
+            emailVar == "" ||
+            senhaVar == "" ||
+            confirmacaoSenhaVar == ""
+        ) {
+            cardErro.style.display = "block";
+            mensagem_erro.innerHTML =
+                "(Mensagem de erro para todos os campos em branco)";
+
+            finalizarAguardar();
+            return false;
+        } else {
+            setInterval(console.log('sumir mensagem'), 5000);
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
+                    setTimeout(() => {
+                        window.location = "login.html";
+                    }, "2000");
+
+                    // limparFormulario();
+                    // finalizarAguardar();
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                finalizarAguardar();
+            });
+
+        return false;
+    }
+</script>
