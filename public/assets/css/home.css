@@ -147,7 +147,7 @@ header nav {
     background-image: linear-gradient(rgb(0,0,0,0.95), rgb(0,0,0,0) );
     height: 100px;
     width: 100%;
-    position: sticky; 
+    /* position: sticky;  */
     top: 100px;
 }
 
@@ -197,7 +197,7 @@ header nav {
     cursor: pointer;
     position: relative;
     transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  
+    z-index: 1;
     --transition-timing: 0.35s;
   }
   
@@ -331,4 +331,175 @@ header nav {
   align-items: center;
   flex-direction: column;
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#modal_informacao_person{
+  display: none;
+justify-content: center;
+align-items: center;
+position: absolute;
+width: 100%;
+height: 834px;
+top: 0%;
+background-color: rgba(34, 32, 32, 0.685);
+z-index: 999;
+}
+.container_informacao_person{
+  display: flex;
+justify-content: center;
+align-items: center;
+/* background: linear-gradient(90deg, rgba(131,131,100,1) 0%, rgba(250,250,178,1) 50%, rgba(131,131,100,1) 100%); */
+  background-color: rgba(255, 255, 255, 0);
+position: absolute;
+top: 1%;
+width: 70%;
+/* height: 760px; */
+margin-top: 5vh;
+margin-bottom: 100vh;
+padding-left: 10px;
+/* border-radius:20px; */
+}
+
+#imagem_informacao_person{
+  height: 85%;
+}
+
+#sobre_informacao_person {
+  height: 100%; 
+  width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: start;
+color: black;
+padding: 10px;
+border-radius: 10px;
+  background-image: url(../assets/pergaminho\ certo.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+} 
+#close_modal_person {
+  position: absolute;
+left: 90%;
+top: 10vh;
+padding: 3px 6px;
+font-weight: bold;
+font-size: 15px;
+border: 2px solid #000000e1;
+border-radius: 5px;
+color: #000000e1;
+}
+#tipo_person p{
+  display: flex;
+  padding: 4px;
+  width: 89%;
+  height: 63px;
+  padding-inline: 19px;
+  font-size: 21px;
+  width: 1000px;
+}
+#tipo_person h1{
+  padding: 20px;
+}
+.informacoes{
+  font-weight: bold;
+}
+.favoritos{
+  position: absolute;
+left: 89%;
+  top: 660px;
+font-weight: bold;
+border-radius: 5px;
+color: #000000e1;
+}
+.favoritos img{
+  width: 35%;
+
+}
+#sobre_informacao_person #close_modal_person:hover        {
+  cursor: pointer;
+background-color: #EE7331;
+color: white;
+border-color: white;
+}
+#sobre_informacao_person #tipo_person{
+  margin-bottom: 15px;
+font-size: 22px;
+color: #000000e1;
+}
+
+.modal{
+  width: 100%;
+}
+
+.informacao_personagem{
+  width: 100%;
+}
+.person1{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.person_item1{
+  width: 18.4%;
+}
+.person_item1:hover{
+  transition: 1s;
+  transform: scale(1.2);
+}
+.person_item2:hover{
+  transition: 1s;
+  transform: scale(1.2);
+}
+.person2{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.person_item2{
+  width: 18.4%;
+}
+
+.Amora {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 180vh;
+}
+
+.Amora p {
+  font-size: 25px;
+}
+
+#tipo_person{
+  z-index: 99;
 }

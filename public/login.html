@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./assets/css/login.css">
+    <script src="assets/js/sessao.js"></script>
 </head>
 
 <body>
@@ -16,7 +17,8 @@
 
         <header>
             <div>
-                <a href="index.html"> <img src="./assets/img/naruto_render_by_eclairdesigns-d4jzfuj.png" class="img1"> </a>
+                <a href="index.html"> <img src="./assets/img/naruto_render_by_eclairdesigns-d4jzfuj.png" class="img1">
+                </a>
                 <a href="index.html"> <img src="./assets/img/nomeNarutoo-removebg-preview (1).png" class="img2"> </a>
             </div>
 
@@ -53,15 +55,15 @@
                 <div class="EmailSenha">
 
                     <p>Email</p>
-                    <input type="text" placeholder="naruto@gmail.com">
+                    <input type="text" placeholder="naruto@gmail.com" id="email_input">
 
                     <p>Senha</p>
-                    <input type="password" placeholder="**********">
+                    <input type="password" placeholder="**********" id="senha_input">
 
                 </div>
 
                 <div class="div-btn">
-                    <button>ENTRAR</button>
+                    <button onclick="entrar()">ENTRAR</button>
                 </div>
             </div>
 
@@ -73,3 +75,84 @@
 </body>
 
 </html>
+
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+            console.log('preencha os campos');
+            finalizarAguardar();
+
+            return false;
+        }
+
+        else {
+
+            setInterval(console.log('sumir mensagem'), 5000)
+
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                    }, 1000); // apenas para exibir o loading
+                    window.location.href = "charts.html";
+
+
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+    }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
+
+</script>

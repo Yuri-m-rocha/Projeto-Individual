@@ -106,8 +106,8 @@ header nav {
 }
 
 .login {
-    height: 400px;
-    width: 600px;
+    height: 600px;
+    width: 875px;
     padding-right: 95px;
     display: flex;
     flex-direction: column;
@@ -123,7 +123,7 @@ header nav {
 
 .EmailSenha {
     width: 70%;
-    height: 200px;
+    height: 300px;
 }
 
 .EmailSenha p {

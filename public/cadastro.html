@@ -64,6 +64,17 @@
                     <p>CONFIRMAÇÃO DA SENHA</p>
                     <input type="password" placeholder="**********" id="confSenha_input">
 
+                    <p>DATA DE NASCIMENTO</p>
+                    <input type="date" id="data_input">
+                    
+                    <p>GENERO</p>
+                    <select name="" id="genero_input">
+                        <option value="#"></option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outros">Outros</option>
+                    </select> 
+                
                 </div>
 
                 <div class="div-btn">
@@ -90,16 +101,22 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confSenha_input.value;
+        var generoVar = genero_input.value;
+        var dtNascVar = data_input.value;
 
         if (
             nomeVar == "" ||
             emailVar == "" ||
             senhaVar == "" ||
-            confirmacaoSenhaVar == ""
+            confirmacaoSenhaVar == "" ||
+            generoVar == "" ||
+            dtNascVar == ""
         ) {
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-                "(Mensagem de erro para todos os campos em branco)";
+            // cardErro.style.display = "block";
+            // mensagem_erro.innerHTML =
+            //     "(Mensagem de erro para todos os campos em branco)";
+
+            console.log('preencha os campos');
 
             finalizarAguardar();
             return false;
@@ -108,7 +125,9 @@
         }
 
         // Enviando o valor da nova input
+
         fetch("/usuarios/cadastrar", {
+
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -119,6 +138,8 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
+                generoServer: generoVar,
+                dtNascServer: dtNascVar,
 
             }),
         })
@@ -129,7 +150,7 @@
                     console.log("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
 
                     setTimeout(() => {
-                        window.location = "login.html";
+                        window.location.href = "./login.html";
                     }, "2000");
 
                     // limparFormulario();
@@ -142,7 +163,5 @@
                 console.log(`#ERRO: ${resposta}`);
                 finalizarAguardar();
             });
-
-        return false;
     }
 </script>
