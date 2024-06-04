@@ -1,4 +1,3 @@
-const { join } = require("path");
 
 function sobre_person(person){
     var modal = document.getElementById('modal_informacao_person');

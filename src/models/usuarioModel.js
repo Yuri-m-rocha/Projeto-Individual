@@ -24,7 +24,7 @@ function cadastrar(nome, email, senha, genero, dtNasc) {
 }
 
 function buscaridadepublica(){
-    var script = `select year(dtNasc) as 'anonascimento' from usuario`
+    var script = `select year(dtNasc) as 'ano de nascimento' from usuario`
     return database.executar(script)
 }
 
