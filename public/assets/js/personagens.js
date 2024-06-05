@@ -1,7 +1,12 @@
 
 function sobre_person(person){
+
+
     var modal = document.getElementById('modal_informacao_person');
     var tipo_person = document.getElementById('tipo_person');
+    document.getElementById("modal_informacao_person").style.display="block";
+
+    window.location.href = '#modal_informacao_person';
 
     if(person == 'naruto'){
         tipo_person.innerHTML = `<div class="Amora"><h1> Naruto Uzumaki </h1>
@@ -19,10 +24,9 @@ function sobre_person(person){
     <p><span  class="informacoes">Desenvolvimento do Personagem:</span>Evolui de um ninja desprezado para um herói amado.
         Enfrenta desafios, fazendo amizades e aprendendo lições ao longo de sua jornada.</p>
       <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-      <p><span class="informacoes">Kage:</span>Hokage</p></div>
       `
     } else if(person == 'sakura'){
-        tipo_person.innerHTML = ` <h1>Sakura Haruno</h1>
+        tipo_person.innerHTML = ` <div class="Amora"><h1>Sakura Haruno</h1>
         <p><span class="informacoes">Origem:</span> Ninja da Vila da Folha (Konohagakure).</p>
       
         <p><span class="informacoes"> História de Fundo:</span>Inicialmente, foco em se tornar mais forte para atrair Sasuke.
@@ -41,11 +45,11 @@ function sobre_person(person){
         <p><span  class="informacoes">Desenvolvimento do Personagem:</span>Passa por uma evolução significativa, deixando de lado a dependência emocional de Sasuke.
           Torna-se uma ninja forte e independente, desempenhando papel crucial nas batalhas.</p>
           <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-          <p><span class="informacoes">Kage:</span>Hokage</p>
+         
       `
   
     } else if(person == 'sasuke'){
-        tipo_person.innerHTML = `<h1>Sasuke Uchiha</h1>
+        tipo_person.innerHTML = `<div class="Amora"><h1>Sasuke Uchiha</h1>
         <p><span class="informacoes">Origem:</span> Membro do clã Uchiha da Vila da Folha.</p>
       
         <p><span class="informacoes"> História de Fundo:</span>Clã Uchiha massacrado; busca vingança contra irmão, Itachi.</p>
@@ -63,10 +67,10 @@ function sobre_person(person){
         <p><span  class="informacoes">Desenvolvimento do Personagem:</span>Jornada marcada por conflitos internos, desafios e reflexões.
           Questiona motivações e enfrenta escolhas difíceis.</p>
           <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-          <p><span class="informacoes">Kage:</span>Hokage</p>`
+         `
    
     } else if(person == 'kakashi'){
-        tipo_person.innerHTML = `<h1>Kakashi Hatake</h1>
+        tipo_person.innerHTML = `<div class="Amora"><h1>Kakashi Hatake</h1>
         <p><span class="informacoes">Origem:</span> Ninja da Vila da Folha (Konohagakure).
           Conhecido como "Kakashi o Ninja Copiador" devido à sua habilidade de copiar técnicas.</p>
       
@@ -87,11 +91,11 @@ function sobre_person(person){
         <p><span  class="informacoes">Desenvolvimento do Personagem:</span>Inicialmente, retratado como um ninja misterioso.
           Ao longo da série, revela mais sobre seu passado e motivações.</p>
           <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-          <p><span class="informacoes">Kage:</span>Hokage</p>
+          
       `
     }
     else if(person == 'jiraiya'){
-        tipo_person.innerHTML = `<h1>Jiraiya </h1>
+        tipo_person.innerHTML = `<div class="Amora"><h1>Jiraiya </h1>
         <p><span class="informacoes">Origem:</span> Ninja lendário da Vila da Folha (Konohagakure).
           Conhecido como o "Ero-Sennin" (Sábio Pervertido).</p>
       
@@ -112,11 +116,11 @@ function sobre_person(person){
         <p><span  class="informacoes">Desenvolvimento do Personagem:</span>Inicialmente, retratado como um personagem cômico.
           Ao longo da série, revela-se como um ninja sábio e corajoso, enfrentando ameaças perigosas.</p>
           <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-          <p><span class="informacoes">Kage:</span>Hokage</p>
+         
       `
   
     } else if(person == 'hinata'){
-      tipo_person.innerHTML = `<h1>Hinata Hyuga</h1>
+      tipo_person.innerHTML = `<div class="Amora"><h1>Hinata Hyuga</h1>
       <p><span class="informacoes">Origem:</span> Membro do clã Hyuga da Vila da Folha (Konohagakure).
         Inicialmente, é uma ninja tímida e insegura.</p>
     
@@ -136,11 +140,11 @@ function sobre_person(person){
       <p><span  class="informacoes">Desenvolvimento do Personagem:</span>Passa por uma notável transformação, ganhando confiança e coragem.
         Torna-se uma ninja valente, disposta a arriscar tudo por aqueles que ama.</p>
         <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-        <p><span class="informacoes">Kage:</span>Hokage</p>
+       
     `
   
     } else if(person == 'gaara'){
-      tipo_person.innerHTML = `<h1>Gaara</h1>
+      tipo_person.innerHTML = `<div class="Amora"><h1>Gaara</h1>
       <p><span class="informacoes">Origem:</span> Ninja da Vila da Areia (Sunagakure).
         Possui o Bijuu Shukaku, o Tanuki de Uma Cauda, selado em seu corpo.</p>
     
@@ -162,10 +166,10 @@ function sobre_person(person){
         Ao longo da série, experimenta uma transformação emocional, encontrando amizade e aceitação.
     </p>
     <p><span class="informacoes">Aldeia:</span>Vila da Areia</p>
-      <p><span class="informacoes">Kage:</span> Kazekage</p>`
+      `
   
     } else if(person == 'shikamru'){
-      tipo_person.innerHTML = `<h1>Shikamaru Nara</h1>
+      tipo_person.innerHTML = `<div class="Amora"><h1>Shikamaru Nara</h1>
       <p><span class="informacoes">Origem:</span>  Membro do clã Nara na Vila da Folha (Konohagakure).
         Conhecido por sua inteligência e estratégias.</p>
     
@@ -186,11 +190,11 @@ function sobre_person(person){
         Assuma papéis de liderança e se torna um dos ninjas mais confiáveis da vila.
     </p>
     <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-      <p><span class="informacoes">Kage:</span>Hokage</p>
+      
   `
   
     } else if(person == 'neji'){
-      tipo_person.innerHTML = `<h1>Neji Hyuga</h1>
+      tipo_person.innerHTML = `<div class="Amora"><h1>Neji Hyuga</h1>
       <p><span class="informacoes">Origem:</span>  Membro talentoso do clã Hyuga na Vila da Folha (Konohagakure).
         Inicialmente, demonstra uma visão fatalista do destino.</p>
     
@@ -211,11 +215,11 @@ function sobre_person(person){
         Sacrifica-se para proteger seus companheiros durante a Quarta Grande Guerra Ninja.
     </p>
     <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-      <p><span class="informacoes">Kage:</span>Hokage</p>
+     
   `
   
     } else if(person == 'minato'){
-      tipo_person.innerHTML = `<h1>Minato Namikaze</h1>
+      tipo_person.innerHTML = `<div class="Amora"><h1>Minato Namikaze</h1>
       <p><span class="informacoes">Origem:</span>Ninja da Vila da Folha (Konohagakure).
         Quarto Hokage e pai de Naruto Uzumaki.</p>
      
@@ -236,7 +240,7 @@ function sobre_person(person){
         Sua morte precoce e sacrifício têm um impacto significativo na história e no desenvolvimento de Naruto.
     </p>
     <p><span class="informacoes">Aldeia:</span>Vila da Folha</p>
-      <p><span class="informacoes">Kage:</span>Hokage</p>
+     
   `
   
     }

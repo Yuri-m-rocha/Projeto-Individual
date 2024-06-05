@@ -88,3 +88,14 @@
     color: white;
     font-size: 21px;
   }
+
+  .SBmais  {
+    margin-top: 13.5%;
+    height: 500px;
+    width: 800px;
+    background-color: blue;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    
+  }
