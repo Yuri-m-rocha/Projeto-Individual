@@ -24,7 +24,7 @@ function cadastrar(nome, email, senha, genero, dtNasc) {
 }
 
 function buscaridadepublica(){
-    var script = `select year(dtNasc) as 'ano de nascimento' from usuario`
+    var script = `select year(dtNasc) as 'anodenascimento' from usuario`
     return database.executar(script)
 }
 
@@ -33,10 +33,23 @@ function buscargeneropublico(){
     return database.executar(script)
 }
 
+
+function QtdAcertosusuario(){
+    var script = `
+    select usuario.nome as 'usuario', quiz.qtdAcertos as 'QutdAcertos' from usuario 
+        join quiz 
+            on fkUsuario = idUsuario;`
+            
+    return database.executar(script)
+}
+
+
+
 module.exports = {
     autenticar,
     cadastrar,
     buscaridadepublica,
-    buscargeneropublico
+    buscargeneropublico,
+    QtdAcertosusuario
 };
 

@@ -114,6 +114,26 @@ function generopublico(req, res){
             );
             res.status(500).json(erro.sqlMessage);
         }
+            ) 
+}
+function QtdAcertos(req, res){
+
+    var id = req.body.idServer;
+
+    usuarioModel.QtdAcertosusuario()
+    .then (
+        function(resultado){
+            res.status(200).json(resultado);
+        }
+    ) .catch(
+        function(erro){
+            console.log(erro);
+            console.log(
+                "\nHouve um erro ao buscar genero! Erro: ",
+                erro.sqlMessage
+            );
+            res.status(500).json(erro.sqlMessage);
+        }
             )
 }
 
@@ -122,5 +142,6 @@ module.exports = {
     autenticar,
     cadastrar,
     idadepublico,
-    generopublico
+    generopublico,
+    QtdAcertos
 }

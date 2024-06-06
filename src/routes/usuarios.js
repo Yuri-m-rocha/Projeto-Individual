@@ -17,5 +17,8 @@ router.get("/idadepublico", function (req, res) {
 router.get("/generopublico", function (req, res){
     usuarioController.generopublico(req, res);
 });
+router.get("/QtdAcertos", function (req, res){
+    usuarioController.QtdAcertos(req, res);
+});
 
 module.exports = router;
