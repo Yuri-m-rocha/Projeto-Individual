@@ -107,11 +107,13 @@ header nav {
   width: 85%;
   margin-top: 2%;
   margin-bottom: 2%;
-  border: 1px solid black;
+  border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 1%;
+  background-color: #db7924cf;
 }
 .conteudo h2{
   margin-bottom: 3%;
@@ -130,11 +132,12 @@ header nav {
 }
 
 .texto{
-  height: 80%;
+  height: 60%;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row;
 }
 .texto span{
   margin: 2%;
@@ -167,4 +170,33 @@ header nav {
 }
 .ods span{
   text-align: center;
+}
+
+.infos{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.infos span{
+  font-size: 25px;
+}
+
+.infos h2 {
+  font-size: 30px;
+  font-style: italic;
+}
+
+.imgInfos{
+  width: 40%;
+  height: 100%;
+}
+
+.imgInfos img {
+  height: 100%;
+  width: 100%;
 }

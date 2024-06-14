@@ -403,14 +403,18 @@
 
                 var grafico = document.getElementById('GraficoBarra');
 
+                var tentativas = [];
                 let acertos = dados.map(item => item.QutdAcertos);
+                for(var i = 0; i < acertos.length; i++){
+                    tentativas.push(`Tentativa ${i + 1}`);
+                }
 
                 grafico.width = 100;
 
                 var barChart = new Chart(grafico, {
                     type: 'bar',
                     data: {
-                        labels: ['Acertos'],  // Corrigido: 'labels' deve estar dentro de 'data'
+                        labels: tentativas,  // Corrigido: 'labels' deve estar dentro de 'data'
                         datasets: [{
                             label: 'Quantidade de Acertos',
                             data: acertos,

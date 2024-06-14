@@ -168,7 +168,7 @@ function sobre_person(person){
     <p><span class="informacoes">Aldeia:</span>Vila da Areia</p>
       `
   
-    } else if(person == 'shikamru'){
+    } else if(person == 'shikamaru'){
       tipo_person.innerHTML = `<div class="Amora"><h1>Shikamaru Nara</h1>
       <p><span class="informacoes">Origem:</span>  Membro do clã Nara na Vila da Folha (Konohagakure).
         Conhecido por sua inteligência e estratégias.</p>
